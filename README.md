@@ -33,8 +33,8 @@ Fill out your URL, model and API key in `.env`.
 Place your documents in `.\documents` and run:
 
 ```bash
-.\.venv\Scripts\activate`
-python .\ingest_docs.py'
+.\.venv\Scripts\activate
+python .\ingest_docs.py
 ``` 
 
 
@@ -43,8 +43,8 @@ python .\ingest_docs.py'
 Run
 
 ```bash
-.\.venv\Scripts\activate`
-python .\query_rag.py'
+.\.venv\Scripts\activate
+python .\query_rag.py
 ``` 
 
 and ask a question.
@@ -55,8 +55,8 @@ and ask a question.
 Add your test queries to `evaluate_rag.py` then run:
 
 ```bash
-.\.venv\Scripts\activate`
-python .\evaluate_rag.py'
+.\.venv\Scripts\activate
+python .\evaluate_rag.py
 ```
 
 
