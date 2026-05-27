@@ -2,22 +2,20 @@
 
 Demonstrate vectorization and semantic search of vector DB (ChromaDB) to enrich LLM output with data injected into context.
 
-## Env Setup
+## Installation and Env setup
 
 ```bash
+# Clone the repo
+git clone https://github.com/hargn111/simple-rag-demo.git
+cd simple-rag-demo
+
 # Create virtual environment
 python3 -m venv .venv
-source rag-env/bin/activate  # On Windows: rag-env\Scripts\activate
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install core dependencies
 pip install --upgrade pip
-pip install langchain langchain-community langchain-openai langchain-huggingface
-pip install chromadb  # Or: pip install faiss-cpu
-pip install sentence-transformers
-pip install pypdf  # PDF processing
-pip install pymupdf  # PDF processing
-pip install tiktoken  # Token counting
-pip install python-dotenv  # Environment variables
+pip install -r requirements.txt
 
 cp .env.example .env
 ```
@@ -30,11 +28,11 @@ Fill out your URL, model and API key in `.env`.
 
 ## Ingest docs
 
-Place your documents in `.\documents` and run:
+Place your documents in `documents` and run:
 
 ```bash
-.\.venv\Scripts\activate
-python .\ingest_docs.py
+source .venv/bin/activate
+python3 ingest_docs.py
 ``` 
 
 
@@ -43,8 +41,8 @@ python .\ingest_docs.py
 Run
 
 ```bash
-.\.venv\Scripts\activate
-python .\query_rag.py
+source .venv/bin/activate
+python3 query_rag.py
 ``` 
 
 and ask a question.
@@ -55,8 +53,8 @@ and ask a question.
 Add your test queries to `evaluate_rag.py` then run:
 
 ```bash
-.\.venv\Scripts\activate
-python .\evaluate_rag.py
+source .venv/bin/activate
+python3 evaluate_rag.py
 ```
 
 
@@ -103,5 +101,5 @@ This creates an OpenAI-compatible endpoint at http://localhost:8080
 
 ### Not fully implemented
 
-- Epub to PDF converter (`epub_to_pdf.py`) - its there but not implemented in a meaningful way.
+- Epub to PDF converter (`epub_to_pdf.py`) - its there but not implemented in a meaningful way. need to install `requirements-epub.txt` in your venv to use.
 - Sphinx/web html doc ingestion (its in the ingestion script and functional, just no proper CLI arg. uncomment it and comment out the load_and_process_documents call to use)
