@@ -9,6 +9,10 @@ Demonstrate vectorization and semantic search of vector DB (ChromaDB) to enrich 
 git clone https://github.com/hargn111/simple-rag-demo.git
 cd simple-rag-demo
 
+# Set up source dir and secrets
+mkdir documents
+cp .env.example .env
+
 # Create virtual environment
 python3 -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
@@ -16,9 +20,6 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 # Install core dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
-
-mkdir documents
-cp .env.example .env
 ```
 
 
