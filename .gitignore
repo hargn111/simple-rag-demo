@@ -1,0 +1,5 @@
+.venv/
+documents/
+chroma_db/
+.env
+ingest_docs_old.py
